@@ -15,8 +15,10 @@
            paths:
              - echo-output
    two:
-     docker:
-       - image: circleci/python:3.8.2
+     machine:
+       image: ubuntu-1604:201903-01
+       docker_layer_caching: true
+       # - image: circleci/python:3.8.2
      steps:
        - checkout
        - run: echo "A more fimiliar hi"
