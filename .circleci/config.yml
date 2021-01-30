@@ -18,7 +18,7 @@ jobs:
       - checkout
       - run:
           name: Run Lesson2 script
-          command: 'python Lesson2/script.py'
+          command: 'python lesson2/script.py'
 
 workflows:
   version: 2
