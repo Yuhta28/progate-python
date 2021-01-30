@@ -3,7 +3,7 @@ apple_price = 200
 money = 1000
 
 #input_count = input("購入するりんごの個数を入力してください")
-input_count = 10
+input_count = 5
 count = int(input_count)
 total_price = apple_price * count
 
