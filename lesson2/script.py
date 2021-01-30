@@ -8,7 +8,7 @@ for item_name in items:
 
     #input_count = input("購入する" + item_name + "の個数を入力してください：")
     print("購入する" + item_name + "の個数を入力してください：3")
-    int_count=3
+    int_count="3"
     print("購入する" + item_name + "の個数は" + int_count + "個です")
 
     count = int(int_count)
