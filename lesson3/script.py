@@ -32,7 +32,7 @@ print("名前を入力してください:Test")
 player_name = ""
 print("何を出しますか？（0: グー, 1: チョキ, 2: パー）")
 #player_hand = int(input("数字で入力してください："))
-player_hand = 1
+player_hand = 2
 
 if validate(player_hand):
     computer_hand = 1
