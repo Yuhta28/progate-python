@@ -12,7 +12,7 @@ def print_hand(hand,name="ゲスト"):
 print("じゃんけんを始めます")
 #player_name = input("名前を入力してください：")
 print("名前を入力してください:Test")
-player_name = "Test"
+player_name = ""
 print("何を出しますか？（0: グー, 1: チョキ, 2: パー）")
 #player_hand = int(input("数字で入力してください："))
 player_hand = 0
