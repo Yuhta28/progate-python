@@ -15,7 +15,7 @@ print("名前を入力してください:Test")
 player_name = "Test"
 print("何を出しますか？（0: グー, 1: チョキ, 2: パー）")
 #player_hand = int(input("数字で入力してください："))
-player_hand = "0"
+player_hand = 0
 
 if player_name == "":
     print_hand(player_hand)
