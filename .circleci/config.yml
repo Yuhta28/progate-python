@@ -58,5 +58,5 @@ workflows:
       - progate2
       - progate3
       - progate4
-#      - progate5
+      - progate5
 

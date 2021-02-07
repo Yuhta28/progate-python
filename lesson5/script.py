@@ -1,5 +1,6 @@
 from food import Food
 from drink import Drink
+import random
 
 food1 = Food("サンドイッチ",500,330)
 food2 = Food("チョコケーキ",400,450)
@@ -27,10 +28,17 @@ for drink in drinks:
 
 print("--------------------")
 
-food_order = int(input("食べ物の番号を選択してください: "))
+#food_order = int(input("食べ物の番号を選択してください: "))
+food_order = random.randint(0,2)
 selected_food = foods[food_order]
 
-drink_order = int(input("飲み物の番号を選択してください: "))
+#drink_order = int(input("飲み物の番号を選択してください: "))
+drink_order = random.randint(0,2)
 selected_drink = drinks[drink_order]
 
-count
+#count = int(input("何セット買いますか？(3つ以上で1割引): "))
+count = random.randint(1,5)
+result = selected_food.get_total_price(count) + selected_drink.get_total_price(count)
+
+print("個数は" + str(count) + "個です")
+print("合計は" + str(result) + "円です")
