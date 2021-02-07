@@ -30,6 +30,16 @@ jobs:
           name: Run Lesson3 script
           command: 'python lesson3/script.py'
 
+  progate4:
+    docker:
+      - image: circleci/python:3.8.2
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Run Lesson4 script
+          command: 'python lesson4/script.py'
+
 workflows:
   version: 2
   Progate:
@@ -37,4 +47,5 @@ workflows:
       - progate1
       - progate2
       - progate3
+      - progate4
 
