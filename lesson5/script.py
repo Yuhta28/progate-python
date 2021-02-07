@@ -37,8 +37,10 @@ drink_order = random.randint(0,2)
 selected_drink = drinks[drink_order]
 
 #count = int(input("何セット買いますか？(3つ以上で1割引): "))
-count = random.randint(1,5)
-result = selected_food.get_total_price(count) + selected_drink.get_total_price(count)
-
-print("個数は" + str(count) + "個です")
+count_food  = random.randint(1,5)
+count_drink = random.randint(1,5)
+result = selected_food.get_total_price(count_food) + selected_drink.get_total_price(count_drink)
+print("選んだ食べ物：" + selected_food.info())
+print("選んだ飲み物：" + selected_drink.info())
+print("個数：食べ物 " + str(count_food) + " 飲み物 " + str(count_drink))
 print("合計は" + str(result) + "円です")
