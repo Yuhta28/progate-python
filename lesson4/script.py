@@ -21,3 +21,10 @@ order = random.randint(0,3)
 selected_menu = menu_items[order]
 
 print("選択されたメニュー：　" + selected_menu.name)
+
+#count = int(input("個数を入力してください(3つ以上で1割引): "))
+count = random.randint(0,5)
+result = selected_menu.get_total_price(count)
+
+print("個数は" + str(count) + "個です")
+print("合計は" + str(result) + "円です" )
