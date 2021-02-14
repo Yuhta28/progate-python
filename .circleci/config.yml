@@ -1,9 +1,13 @@
-version: 2
-jobs:
-  progate1:
+executors:
+  default:
     docker:
       - image: cimg/python:3.8.2
     working_directory: ~/repo
+
+version: 2.1
+jobs:
+  progate1:
+    executor: default
     steps:
       - checkout
       - run:
@@ -11,9 +15,7 @@ jobs:
           command: 'python lesson1/script.py'
 
   progate2:
-    docker:
-      - image: cimg/python:3.8.2
-    working_directory: ~/repo
+    executor: default
     steps:
       - checkout
       - run:
@@ -21,9 +23,7 @@ jobs:
           command: 'python lesson2/script.py'
 
   progate3:
-    docker:
-      - image: cimg/python:3.8.2
-    working_directory: ~/repo
+    executor: default
     steps:
       - checkout
       - run:
@@ -31,9 +31,7 @@ jobs:
           command: 'python lesson3/script.py'
 
   progate4:
-    docker:
-      - image: cimg/python:3.8.2
-    working_directory: ~/repo
+    executor: default
     steps:
       - checkout
       - run:
@@ -41,9 +39,7 @@ jobs:
           command: 'python lesson4/script.py'
 
   progate5:
-    docker:
-      - image: cimg/python:3.8.2
-    working_directory: ~/repo
+    executor: default
     steps:
       - checkout
       - run:
