@@ -68,7 +68,7 @@ jobs:
           at: .
       - run:
           name: jest-junitパッケージを追加
-          command: yarn add -dev jest-junit
+          command: yarn add --dev jest-junit
       - run:
           name: Jestを実行
           command: |
