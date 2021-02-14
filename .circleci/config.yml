@@ -49,6 +49,8 @@ jobs:
   test_jests:
     docker:
       - image: cimg/node:lts
+    working_directory: ~/repo
+    
     steps:
       - run:
           name: jest-junitパッケージを追加
