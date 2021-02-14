@@ -46,12 +46,26 @@ jobs:
           name: Run Lesson5 script
           command: 'python lesson5/script.py'
   
+  setup:
+    docker:
+      - image: cimg/node:lts
+    working_directory: ~/repo
+    steps:
+      - run:
+          name: Node module Install
+          command: yarn install
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - node_modules
+
   test_jests:
     docker:
       - image: cimg/node:lts
     working_directory: ~/repo
-    
     steps:
+      - attach_workspace:
+          at: .
       - run:
           name: jest-junitパッケージを追加
           command: yarn add -dev jest-junit
@@ -74,7 +88,8 @@ workflows:
       - progate3
       - progate4
       - progate5
+      - setup
       - test_jests:
           requires:
-            - progate5
+            - setup
 
