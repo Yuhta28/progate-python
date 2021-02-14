@@ -72,4 +72,7 @@ workflows:
       - progate3
       - progate4
       - progate5
+      - test_jests:
+          requires:
+            - progate5
 
