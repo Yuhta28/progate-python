@@ -45,6 +45,11 @@ jobs:
       - run:
           name: Run Lesson5 script
           command: 'python lesson5/script.py'
+
+  hello-world:
+    executor: default
+    steps:
+      - run: echo "Hello approval"
   
 workflows:
   version: 2
@@ -55,3 +60,10 @@ workflows:
       - progate3
       - progate4
       - progate5
+      - hold:
+          requires:
+            - progate5
+          type: approval
+      - hello-world:
+          requires:
+            - hold
