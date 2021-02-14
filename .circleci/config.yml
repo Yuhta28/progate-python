@@ -46,39 +46,6 @@ jobs:
           name: Run Lesson5 script
           command: 'python lesson5/script.py'
   
-  setup:
-    docker:
-      - image: cimg/node:lts
-    working_directory: ~/repo
-    steps:
-      - run:
-          name: Node module Install
-          command: yarn install
-      - persist_to_workspace:
-          root: ~/repo
-          paths:
-            - node_modules
-
-  test_jests:
-    docker:
-      - image: cimg/node:lts
-    working_directory: ~/repo
-    steps:
-      - attach_workspace:
-          at: .
-      - run:
-          name: jest-junitパッケージを追加
-          command: yarn add --dev jest-junit
-      - run:
-          name: Jestを実行
-          command: |
-            npx jest --ci --maxWorkers=2 \
-            --reporters=default --reporters=jest-junit
-          environment: #レポートファイルの出力先を指定
-            JEST_JUNIT_OUTPUT_DIR: "reports/jest"
-      - store_test_results: #レポートファイルを保存
-          path: reports
-
 workflows:
   version: 2
   Progate:
@@ -88,8 +55,3 @@ workflows:
       - progate3
       - progate4
       - progate5
-      - setup
-      - test_jests:
-          requires:
-            - setup
-
